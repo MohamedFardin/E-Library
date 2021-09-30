@@ -2,12 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+// import store from './Components/Login_SignUp/src/store';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
-  // <React.StrictMode>
-    <App />,
-  // </React.StrictMode>,
+  // <Provider store={store}>
+  //   <BrowserRouter>
+  //     <App />
+  //   </BrowserRouter>
+  // </Provider>,
+  <App />,
   document.getElementById("root")
 );
 
