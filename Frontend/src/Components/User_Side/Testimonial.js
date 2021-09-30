@@ -43,6 +43,8 @@ const Testimonial = () => {
       </div> */}
         <div className="home__container">
                 <div>
+                  <h1>Your reviews matter a lot to us...</h1>
+                  <textarea style={{width: "98%", height: "100px"}}/>
                   <h1 className="home__genre__text">Testimonial</h1>
                   {/* {console.log(Reviews_Testimonials.reviews_list)} */}
                   {
