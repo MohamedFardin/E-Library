@@ -13,6 +13,7 @@ import {books_full_list} from './Components/User_Side/Book_List';
 // import FloatingButton from './Components/FloatingButton';
 import AdminLogin from './Components/User_Side/AdminLogin';
 import Admin from './Components/Admin_Side/Admin';
+import Testimonial from './Components/User_Side/Testimonial';
 // import RoutesContainer from './Components/Login_SignUp/src/components/routes/RoutesContainer';
 const books_list = books_full_list.books_list;
 const genre_list = books_full_list.genres;
@@ -60,6 +61,7 @@ function App() {
 
           <Route path="/">
             <Home books={books_list}/>
+            {/* <Testimonial /> */}
           </Route>
 
           {/* !!! Default Route at bottom !!! */}

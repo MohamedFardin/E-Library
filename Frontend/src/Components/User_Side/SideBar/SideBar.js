@@ -31,7 +31,13 @@ function SideBar(ref) {
   // Genre
   const gotoGenre = () =>
     window.scrollTo({
-        top: ref.innerRef.current.offsetTop,
+        top: ref.genreRef.current.offsetTop,
+        behavior:"smooth"
+    });
+  // Testimonial
+  const gotoTestimonial = () =>
+    window.scrollTo({
+        top: ref.testimonialRef.current.offsetTop,
         behavior:"smooth"
     });
 
@@ -131,6 +137,17 @@ function SideBar(ref) {
               </a>
               <ul className="sub-menu blank">
                 <li><a className="link_name">Statistics</a></li>
+              </ul>
+            </li>
+            
+            {/* Testimonial */}
+            <li onClick={gotoTestimonial}>
+              <a>
+              <i class='bx bxs-message-square-dots'></i>
+                <span className="link_name">Testimonial</span>
+              </a>
+              <ul className="sub-menu blank">
+                <li><a className="link_name">Textimonial</a></li>
               </ul>
             </li>
 
