@@ -18,6 +18,7 @@ const initialValues = {
   publishDate: new Date(),
   edition: '',
   totalNumber: "",
+  category: "",
   description: "",
   coverpic: "",
   coverpic1: "",
@@ -53,12 +54,12 @@ export default function AddModal(props) {
   const classes = useStyles();
   const {values,setValues,handleInputChange} = useForm(initialValues);
   const {open, setOpen} = props;
-  const [pic,setPic] = useState(null);
-  const [coverpic,setCoverpic] = useState(null);
-  const [coverpic1,setCoverpic1] = useState(null);
-  const [coverpic2,setCoverpic2] = useState(null);
-  const [image1,setImage1] = useState(null);
-  const [image2,setImage2] = useState(null);
+  const [pic,setPic] = useState('');
+  const [coverpic,setCoverpic] = useState('');
+  const [coverpic1,setCoverpic1] = useState('');
+  const [coverpic2,setCoverpic2] = useState('');
+  const [image1,setImage1] = useState('');
+  const [image2,setImage2] = useState('');
   
 
   function handleClose(){

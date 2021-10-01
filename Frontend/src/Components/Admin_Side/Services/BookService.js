@@ -1,12 +1,12 @@
 import axios from 'axios';
 
 export const getCategoriesCollection=()=>([
-    {id: '1', title: 'Action'},
-    {id: '2', title: 'Adventure'},
-    {id: '3', title: 'Comedy'},
-    {id: '4', title: 'Thriller'},
-    {id: '5', title: 'Detective'},
-    {id: '6', title: 'Drama'},
+    {id: 'action', title: 'Action'},
+    {id: 'adventure', title: 'Adventure'},
+    {id: 'comedy', title: 'Comedy'},
+    {id: 'thriller', title: 'Thriller'},
+    {id: 'detective', title: 'Detective'},
+    {id: 'drama', title: 'Drama'},
 ])
 
 const book_rest_api_url = 'http://localhost:8080/admin/books';

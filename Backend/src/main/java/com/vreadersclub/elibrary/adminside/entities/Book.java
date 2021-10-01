@@ -20,6 +20,7 @@ public class Book {
     private String publishDate;
     private Integer totalNumber;
     private String description;
+    private String category;
 
     public void setId(Long id) {
         this.id = id;
@@ -54,7 +55,23 @@ public class Book {
     }
 
 
-    public Book(String title, String author, String edition, double price, String type, String publishDate, Integer totalNumber, String description, String coverpic, String image1, String image2, String coverpic1, String coverpic2) {
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public Book(String title, String category, String author, String edition, double price, String type, String publishDate, Integer totalNumber, String description, String coverpic, String image1, String image2, String coverpic1, String coverpic2) {
         this.title = title;
         this.author = author;
         this.edition = edition;
@@ -63,6 +80,7 @@ public class Book {
         this.publishDate = publishDate;
         this.totalNumber = totalNumber;
         this.description = description;
+        this.category = category;
         this.coverpic = coverpic;
         this.image1 = image1;
         this.image2 = image2;
