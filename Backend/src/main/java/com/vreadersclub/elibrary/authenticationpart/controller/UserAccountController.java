@@ -13,6 +13,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.vreadersclub.elibrary.authenticationpart.message.ResponseMessage;
+import com.vreadersclub.elibrary.authenticationpart.model.ConfirmationToken;
+import com.vreadersclub.elibrary.authenticationpart.model.UserEntity;
+import com.vreadersclub.elibrary.authenticationpart.repository.ConfirmationTokenRepository;
+import com.vreadersclub.elibrary.authenticationpart.repository.UserRepo;
+import com.vreadersclub.elibrary.authenticationpart.service.EmailService;
+
 @RestController
 @CrossOrigin
 @Controller
