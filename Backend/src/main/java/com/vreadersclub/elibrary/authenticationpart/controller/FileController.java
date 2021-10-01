@@ -17,6 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.vreadersclub.elibrary.authenticationpart.message.ResponseFile;
+import com.vreadersclub.elibrary.authenticationpart.message.ResponseMessage;
+import com.vreadersclub.elibrary.authenticationpart.model.FileDB;
+import com.vreadersclub.elibrary.authenticationpart.service.FileStorageService;
+
 
 
 @RestController

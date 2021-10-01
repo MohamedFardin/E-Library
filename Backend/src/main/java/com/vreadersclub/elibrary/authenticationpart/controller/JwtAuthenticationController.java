@@ -11,6 +11,13 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
+import com.vreadersclub.elibrary.authenticationpart.config.JwtTokenUtil;
+import com.vreadersclub.elibrary.authenticationpart.model.JwtRequest;
+import com.vreadersclub.elibrary.authenticationpart.model.JwtResponse;
+import com.vreadersclub.elibrary.authenticationpart.model.UserDao;
+import com.vreadersclub.elibrary.authenticationpart.model.UserDto;
+import com.vreadersclub.elibrary.authenticationpart.service.JwtUserDetailsService;
+
 @RestController
 @CrossOrigin
 public class JwtAuthenticationController {
