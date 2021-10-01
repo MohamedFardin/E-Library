@@ -26,7 +26,7 @@ function Admin() {
                 <Card icon={ChatIcon} title="Messages"/>
                 <Card icon={ThumbUpIcon} title="Approve Donations"/>
 
-                <Chat/>
+                {/* <Chat/> */}
                 
             </Container>
         </div>
