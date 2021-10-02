@@ -11,7 +11,6 @@ function Product({id, title, author, description, cover_images, images, rating})
         <div className="product">
             <div className="product__info">
                 <h2>{title}</h2>
-                {/* <p>{description}</p> */}
                 <p className="product__author">
                     <small>~</small>
                     <strong>{author}</strong>

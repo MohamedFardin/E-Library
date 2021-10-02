@@ -6,6 +6,7 @@ import Product from './Product';
 import SideBar from './SideBar/SideBar';
 import FloatingButton from './FloatingButton';
 import BookService from '../Admin_Side/Services/BookService';
+import Testimonial from './Testimonial';
 
 function Home(books) {
     // Getting books
@@ -78,12 +79,6 @@ function Home(books) {
                     books.books.map((row) => (
                         <div>
                             <div className="home__genre">
-                                {/* <Link
-                                to={row[0].toLowerCase()}
-                                className="home__genre__link"
-                                >
-                                    <h3 className="home__genre__text">{row[0]}...</h3>
-                                </Link> */}
                                 <h3
                                     className="home__genre__text"
                                 >{row[0]}...</h3>
@@ -109,11 +104,8 @@ function Home(books) {
                         </div>
                     ))
                     }
-                    {/* <h1 onClick={gotoGenre}>click here!</h1> */}
                 </div>
             </div>
-
-            {/* <SideBar ref={forwardRef(Genre)}/> */}
 
         </div>
     )
