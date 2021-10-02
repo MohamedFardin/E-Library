@@ -3,6 +3,7 @@ package com.vreadersclub.elibrary.authenticationpart.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -50,12 +51,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
-		// We don't need CSRF for this example
+		// We don't need CSRF for this
+		httpSecurity.csrf().disable();
 		httpSecurity.cors().and().csrf().disable().
 		
 		
 				// dont authenticate this particular request
 				authorizeRequests().
+				antMatchers(HttpMethod.POST,"/admin/add-books").permitAll().
+				antMatchers(HttpMethod.DELETE,"/admin/delete-books/{bookId}").permitAll().
+				antMatchers(HttpMethod.PUT,"/admin/update-book/{bookId}").permitAll().
+				antMatchers(HttpMethod.GET,"/admin/get-book/{bookId}").permitAll().
+				antMatchers(HttpMethod.GET,"/admin/books").permitAll().
+			  and()
+				.authorizeRequests().
 				antMatchers("/emailregister","/confirm-account","/upload","/files","/alluser","/user/{id}","/alluserEntity","/updateuser").permitAll().
 		      and()
 		         .authorizeRequests().
