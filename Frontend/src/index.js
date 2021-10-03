@@ -6,14 +6,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import store from './Components/Authentication Part/store';
 
 ReactDOM.render(
-  // <Provider store={store}>
-  //   <BrowserRouter>
-  //     <App />
-  //   </BrowserRouter>
-  // </Provider>,
-  <App />,
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
+  // <App />,
   document.getElementById("root")
 );
 

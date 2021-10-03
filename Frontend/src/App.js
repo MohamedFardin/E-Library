@@ -14,6 +14,8 @@ import {books_full_list} from './Components/User_Side/Book_List';
 import AdminLogin from './Components/User_Side/AdminLogin';
 import Admin from './Components/Admin_Side/Admin';
 import Testimonial from './Components/User_Side/Testimonial';
+import RoutesContainer from './Components/Authentication Part/components/routes/RoutesContainer';
+import { NavBarContainer } from './Components/Authentication Part/components/containers';
 // import RoutesContainer from './Components/Login_SignUp/src/components/routes/RoutesContainer';
 const books_list = books_full_list.books_list;
 const genre_list = books_full_list.genres;
@@ -49,6 +51,10 @@ function App() {
           <Route path="/register">
             <Register />
           </Route> */}
+          <Route path="/login">
+            <NavBarContainer />
+            <RoutesContainer />
+          </Route>
 
           <Route path="/product_description">
             <ProductDescription />
