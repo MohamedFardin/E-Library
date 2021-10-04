@@ -1,5 +1,5 @@
 // import React, { useEffect, useState } from 'react';
-import React from 'react';
+import React, { useRef } from 'react';
 // import './App.css';
 // import '../src/Components/Login_SignUp/src/app/App.css';
 import Home from './Components/User_Side/Home';
@@ -34,6 +34,7 @@ function App() {
   //   })
   // }, []);
 
+
   return (
     // BEM
     <Router>
@@ -66,8 +67,7 @@ function App() {
           </Route>
 
           <Route path="/">
-            <Home books={books_list}/>
-            <Testimonial />
+            <Home/>
           </Route>
 
           {/* !!! Default Route at bottom !!! */}

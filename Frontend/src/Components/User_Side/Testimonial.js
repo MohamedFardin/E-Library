@@ -13,8 +13,7 @@ const Testimonial = () => {
   return (
     <div
       className="testimonial"
-      // style={{ display: "flex", justifyContent: "center", marginTop: 50}}
-      style={{ width: "95%", paddingLeft: "78px"}}
+      style={{ width: "97%"}}
     >
         <div className="testimonialH__container">
                 <div>

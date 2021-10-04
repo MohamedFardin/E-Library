@@ -11,6 +11,8 @@ function SideBar(ref) {
   // console.log(ref.innerRef);
   // console.log(genreOnClick);
 
+  console.log(ref);
+
   // Hamburger
   const [isActive, setActive] = useState("false");
 
@@ -31,7 +33,13 @@ function SideBar(ref) {
   // Genre
   const gotoGenre = () =>
     window.scrollTo({
-        top: ref.innerRef.current.offsetTop,
+        top: ref.genreRef.current.offsetTop,
+        behavior:"smooth"
+    });
+
+  const gototestimonial = () =>
+    window.scrollTo({
+        top: ref.testimonialRef.current.offsetTop,
         behavior:"smooth"
     });
 
@@ -137,7 +145,7 @@ function SideBar(ref) {
             {/* Donate Books */}
             <li>
               <div className="iocn-link">
-                <a href="/login">
+                <a>
                   {/* <i className='bx bxs-home'></i> */}
                   <i className='bx bxs-donate-heart'></i>
                   <span className="link_name">DonateBooks</span>
@@ -146,6 +154,22 @@ function SideBar(ref) {
               </div>
               <ul className="sub-menu">
                 <li><a className="link_name">DonateBooks</a></li>
+              </ul>
+            </li>
+            
+            {/* Testimonial */}
+            <li
+              onClick={gototestimonial}
+            >
+              <div className="iocn-link">
+                <a>
+                <i class='bx bxs-book-content'></i>
+                  <span className="link_name">Testimonial</span>
+                </a>
+                {/* <i className='bx bxs-chevron-down arrow' ></i> */}
+              </div>
+              <ul className="sub-menu">
+                <li><a className="link_name">Testimonial</a></li>
               </ul>
             </li>
 

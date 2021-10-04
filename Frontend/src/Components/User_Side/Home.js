@@ -7,9 +7,15 @@ import SideBar from './SideBar/SideBar';
 import FloatingButton from './FloatingButton';
 import BookService from '../Admin_Side/Services/BookService';
 import Testimonial from './Testimonial';
+import { books_full_list } from './Book_List';
 
-function Home(books) {
+function Home(testimonialref) {
     // Getting books
+    // const books_list = books_full_list.books_list;
+    const books = books_full_list.books_list;
+
+    console.log(books.books);
+
     const [Allbooks, setBooks] = useState([]);
 
     useEffect(() => {
@@ -23,7 +29,10 @@ function Home(books) {
         })
     }
 
+    // Genre
     const Genre = useRef(null);
+    // Testimonial
+    const testimonial = useRef(null);
 
     const gotoHome = () =>
         window.scrollTo({
@@ -31,13 +40,13 @@ function Home(books) {
             behavior:"smooth"
         });
 
-    const SIDEBAR = React.forwardRef((ref) => <SideBar innerRef={Genre}/>);
+    const SIDEBAR = React.forwardRef((ref) => <SideBar genreRef={Genre} testimonialRef={testimonial}/>);
 
     return (
         <div className="home">
             
             {/* <SideBar ref={Genre}/> */}
-            {console.log(Allbooks)}
+            {/* {console.log(Allbooks)} */}
 
             <div onClick={gotoHome}>
                 <FloatingButton />
@@ -76,7 +85,8 @@ function Home(books) {
 
                 <div ref={Genre}>
                     {
-                    books.books.map((row) => (
+                    // books.books.map((row) => (
+                    books.map((row) => (
                         <div>
                             <div className="home__genre">
                                 <h3
@@ -104,6 +114,10 @@ function Home(books) {
                         </div>
                     ))
                     }
+                </div>
+
+                <div ref={testimonial}>
+                    <Testimonial/>
                 </div>
             </div>
 
