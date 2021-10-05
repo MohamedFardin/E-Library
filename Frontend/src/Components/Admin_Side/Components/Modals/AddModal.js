@@ -162,18 +162,21 @@ export default function AddModal(props) {
                 <Grid container >
                   <Grid item xs={6} >
                     <Controls.Input
+                      varient = "outlined"
                       name = "title"
                       label= "Title"
                       value= {values.title}
                       onChange={handleInputChange}
                     /> 
                     <Controls.Input
+                      varient = "outlined"
                       name = "author"
                       label= "Author"
                       value= {values.author}
                       onChange={handleInputChange}
                     /> 
                     <Controls.Input
+                      varient = "outlined"
                       name = "edition"
                       label= "Edition"
                       value= {values.edition}
@@ -182,6 +185,7 @@ export default function AddModal(props) {
                     <Grid container > 
                       <Grid item xs={3}>
                         <Controls.Input
+                          varient = "outlined"
                           name = "price"
                           label= "Price"
                           value= {values.price}
@@ -190,6 +194,7 @@ export default function AddModal(props) {
                       </Grid>
                       <Grid item xs={3}>
                         <Controls.Input
+                          varient = "outlined"
                           name = "totalNumber"
                           label= "Total"
                           value= {values.totalNumber}
@@ -318,6 +323,7 @@ export default function AddModal(props) {
                       items= {typeItems}
                     />
                     <Controls.Select
+                      varient = "outlined"
                       name="category"
                       label="Category"
                       value={values.category}
@@ -332,6 +338,7 @@ export default function AddModal(props) {
                       onChange={handleInputChange}
                     />
                     <Controls.Input
+                      varient = "outlined"
                           name = "description"
                           label= "Description"
                           value= {values.description}

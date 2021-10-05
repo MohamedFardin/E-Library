@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { makeStyles } from '@mui/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
@@ -11,18 +12,48 @@ import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { createMuiTheme } from "@material-ui/core/styles";
 import Chat from "./Chat"
+import { createTheme,ThemeProvider } from '@mui/material/styles';
+
+const useStyles = makeStyles({
+  root: {
+    backgroundColor: 'blue'
+    },
+  Drawer:{
+    '& .MuiPaper-root':{
+    width: '25%',
+    borderRadius: '10px',
+    marginTop: '1%',
+    marginBottom: '1%',
+    marginRight: '1%',
+    fontSize: '0.8rem',
+    bottom: '1%'
+    }
+  }
+});
+
+
+const theme = createTheme({
+  palette:{
+    primary:{
+      main: '#f00'
+    }
+  },
+  shape: {
+    borderRadius: 4,
+  },
+});
 
 export default function TemporaryDrawer(props) {
   const {state, setState} = props;
-
-  const customTheme = createMuiTheme({
+  const classes = useStyles();
+  const customTheme = createTheme({
     overrides: {
       MuiContainer: {
         root: {
           border: "1px solid black",
           width: 80,
           height: 80,
-          borderRadius: 8
+          borderRadius: 4,
         }
       }
     }
@@ -69,16 +100,18 @@ export default function TemporaryDrawer(props) {
   );
 
   return (
-    <div>
-          <Drawer
+        <Drawer
+            className={classes.Drawer}
             anchor='right'
             open={state}
             onClose={toggleDrawer('right', false)}
-            theme={customTheme}
+            theme={theme}
+            
           >
             <Chat />
 
           </Drawer>
-    </div>
+        
+          
   );
 }

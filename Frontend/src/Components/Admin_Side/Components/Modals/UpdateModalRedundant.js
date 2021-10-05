@@ -145,18 +145,21 @@ export default function UpdateModalRedundant(props) {
                 <Grid container >
                   <Grid item xs={6} >
                     <Controls.Input
+                      varient = "outlined"
                       name = "title"
                       label= "Title"
                       value= {values.title}
                       onChange={handleInputChange}
                     /> 
                     <Controls.Input
+                      varient = "outlined"
                       name = "author"
                       label= "Author"
                       value= {values.author}
                       onChange={handleInputChange}
                     /> 
                     <Controls.Input
+                      varient = "outlined"
                       name = "edition"
                       label= "Edition"
                       value= {values.edition}
@@ -165,6 +168,7 @@ export default function UpdateModalRedundant(props) {
                     <Grid container > 
                       <Grid item xs={3}>
                         <Controls.Input
+                          varient = "outlined"
                           name = "price"
                           label= "Price"
                           value= {values.price}
@@ -173,6 +177,7 @@ export default function UpdateModalRedundant(props) {
                       </Grid>
                       <Grid item xs={3}>
                         <Controls.Input
+                          varient = "outlined"
                           name = "totalNumber"
                           label= "Total"
                           value= {values.totalNumber}
@@ -315,6 +320,7 @@ export default function UpdateModalRedundant(props) {
                       onChange={handleInputChange}
                     />
                     <Controls.Input
+                        varient = "outlined"
                           name = "description"
                           label= "Description"
                           value= {values.description}

@@ -21,16 +21,22 @@ import * as SockJS from 'sockjs-client';
 import * as Stomp from 'stompjs';
 import { makeStyles } from '@material-ui/core/styles';
 
+
+
 const useStyles = makeStyles(theme => ({
   footer: {
     position: 'fixed',
     bottom: 0,
-    width: 'auto',
+    width: '100%',
+    display: 'flex',
     height: 'calc(5% + 60px)',
     alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-    marginLeft: '10%'
+    boxSizing: 'border-box',
+    gridRow: 'span 2'
+
+  },
+  section:{
+    gridRow: 'span 5'
   }
 }));
 
@@ -53,12 +59,6 @@ var messagesList = [
     sender: "dungen"
   },
 ];
-
-const section = {
-  height: "100%",
-  paddingTop: 5,
-  backgroundColor: "#fff"
-};
 
 var messageId = 1;
 
@@ -211,39 +211,41 @@ export default function Chat() {
 
   return (
     <div>
-    <React.Fragment>
-      <CssBaseline />
-        <div style={section}>
-          <Typography variant="h5" gutterBottom component="div" sx={{ p: 2, pb: 0 }}>
-            Inbox
-          </Typography>
-        <List sx={{ mb: 2 }}>
-          {messages.map( (item) => (
-              <ListItem button key ={item.id} ref={messageRef}>
-                <ListItemAvatar>
-                  <Avatar alt="Profile Picture"  />
-                </ListItemAvatar>
-                {console.log(messagesList)}
-                {console.log(`Inside List item: ${item}`)}
-                <ListItemText  primary={item.content} secondary={item.sender} />
-              </ListItem>
-          ))}
-        </List>
-        </div>
-        
-    </React.Fragment>
-    <div className= {classes.footer}>
-    <Controls.Input 
-                            name = "message"
-                            label= "Text"
-                            value= {message}
-                            onChange={onChangeHandler}
-                          />
-                <Controls.Button
-                            onClick={sendMessage}
-                            text="Send"
-                          />
-    </div>
+        <CssBaseline />
+          <div className={classes.section}>
+            <Typography variant="h5" gutterBottom component="div" sx={{ p: 2, pb: 0 }}>
+              Inbox
+            </Typography>
+                <List sx={{ mb: 2 }}>
+                  {messages.map( (item) => (
+                      <ListItem button key ={item.id} ref={messageRef}>
+                        <ListItemAvatar>
+                          <Avatar alt="Profile Picture"  />
+                        </ListItemAvatar>
+                        {console.log(messagesList)}
+                        {console.log(`Inside List item: ${item}`)}
+                        <ListItemText  primary={item.content} secondary={item.sender} />
+                      </ListItem>
+                  ))}
+                </List>
+          </div>
+        <paperClasses className= {classes.footer}>
+            <div style={{marginLeft: 'calc(1%)', backgroundColor: '#f1f3f4', borderRadius: '25px'}}>
+            <Controls.Input 
+                                    name = "message"
+                                    label= "Send message"
+                                    value= {message}
+                                    onChange={onChangeHandler}
+                                    InputProps={{
+                                      disableUnderline: true,
+                                    }}
+                                  />
+                        <Controls.Button
+                                    onClick={sendMessage}
+                                    text="Send"
+                                  />
+            </div>
+          </paperClasses>
     </div>
   );
 }
