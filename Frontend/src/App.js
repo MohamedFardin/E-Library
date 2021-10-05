@@ -15,7 +15,9 @@ import AdminLogin from './Components/User_Side/AdminLogin';
 import Admin from './Components/Admin_Side/Admin';
 import Testimonial from './Components/User_Side/Testimonial';
 import RoutesContainer from './Components/Authentication Part/components/routes/RoutesContainer';
-import { NavBarContainer } from './Components/Authentication Part/components/containers';
+import { AdminLoginContainer, AdminSignupContainer, LoginFormContainer, NavBarContainer, SignupFormContainer, UserContainer } from './Components/Authentication Part/components/containers';
+import { ApproveView, ConfirmAccountView, MembershipView, VerificationView } from './Components/Authentication Part/components/views';
+import FloatingButton from './Components/User_Side/FloatingButton';
 // import RoutesContainer from './Components/Login_SignUp/src/components/routes/RoutesContainer';
 const books_list = books_full_list.books_list;
 const genre_list = books_full_list.genres;
@@ -39,7 +41,8 @@ function App() {
     // BEM
     <Router>
       <div className="App">
-      {/* <FloatingButton /> */}
+        <NavBarContainer />
+      <FloatingButton />
         
         <Switch>
 
@@ -52,10 +55,23 @@ function App() {
           <Route path="/register">
             <Register />
           </Route> */}
-          <Route path="/login">
+
+          {/* <Route path="/login">
             <NavBarContainer />
             <RoutesContainer />
-          </Route>
+          </Route> */}
+
+        <Route exact path="/signup" component={SignupFormContainer} />
+        <Route exact path="/login" component={LoginFormContainer} />
+        <Route exact path="/verification" component={VerificationView} />
+        {/* <Route exact path="/home" component={HomePageView} /> */}
+        <Route exact path="/membership" component={MembershipView} />
+        <Route exact path="/confirm-account" component={ConfirmAccountView} />
+        <Route exact path="/approve" component={ApproveView} />
+        {/* <Route exact path="/" component={LoginFormContainer} /> */}
+        <Route exact path="/users/:id" component={UserContainer} />
+        <Route exact path="/adminsignup" component={AdminSignupContainer} />
+        <Route exact path="/admin_login" component={AdminLoginContainer} />
 
           <Route path="/product_description">
             <ProductDescription />

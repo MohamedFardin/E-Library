@@ -8,7 +8,7 @@ const LoginFormView = (props) => {
 
   const history = useHistory();
   function register() {
-      history.push("/admin");
+      history.push("/admin_login");
   }
  
   return (

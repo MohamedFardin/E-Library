@@ -4,6 +4,7 @@ import './SideBar.css';
 import { Link } from 'react-router-dom';
 import Logo from '../Logo.png';
 import { books_full_list } from '../Book_List';
+import auth from '../../auth';
 
 
 function SideBar(ref) {  
@@ -11,7 +12,9 @@ function SideBar(ref) {
   // console.log(ref.innerRef);
   // console.log(genreOnClick);
 
-  console.log(ref);
+  // console.log(ref);
+  const user = auth.tell_User();
+  console.log(user.username);
 
   // Hamburger
   const [isActive, setActive] = useState("false");
@@ -163,7 +166,7 @@ function SideBar(ref) {
             >
               <div className="iocn-link">
                 <a>
-                <i class='bx bxs-book-content'></i>
+                <i className='bx bxs-book-content'></i>
                   <span className="link_name">Testimonial</span>
                 </a>
                 {/* <i className='bx bxs-chevron-down arrow' ></i> */}

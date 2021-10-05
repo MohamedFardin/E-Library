@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import {searchBooksThunk} from "../../thunks";
 import { withRouter } from "react-router";
 import { NavBarView } from "../views";
+import auth from "../../../auth";
 
 class NavBarContainer extends Component {
   constructor(props){
@@ -22,9 +23,14 @@ class NavBarContainer extends Component {
      this.props.searchBooks(this.state);
   };
   render() {
-    return <NavBarView 
-    user={this.props.user}
-    />;
+    return (
+      <div>
+        {/* <NavBarView
+        user={this.props.user}
+        /> */}
+        {auth.set_User(this.props.user)}
+      </div>
+    )
   }
 }
 const mapState = (state) => {
