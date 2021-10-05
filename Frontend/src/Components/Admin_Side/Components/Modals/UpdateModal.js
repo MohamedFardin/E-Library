@@ -11,6 +11,7 @@ import AddModal from './AddModal';
 import UpdateModalRedundant from './UpdateModalRedundant';
 
 const initialValues = {
+  id: 0,
   title: '',
   author: '',
   edition: '',
@@ -19,12 +20,13 @@ const initialValues = {
   publishDate: new Date(),
   edition: '',
   totalNumber: "",
+  category: "",
   description: "",
-  coverpic: [],
-  image1: [],
-  image2: [],
-  image3: [],
-  image4: []
+  coverpic: "",
+  coverpic1: "",
+  coverpic2: "",
+  image1: "",
+  image2: ""
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -65,6 +67,7 @@ export default function DeleteModal(props) {
     .then(response =>{
       console.log(response.data);
       setValues(response.data);
+      console.log(values)
     })
     .catch(error =>{
       console.log(error);

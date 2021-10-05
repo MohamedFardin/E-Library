@@ -8,8 +8,9 @@ import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
+
 @Controller
-@CrossOrigin("http://localhost:3000/")
+@CrossOrigin
 public class WebSocketChatController {
 
     @MessageMapping("/chat.sendMessage")
@@ -27,3 +28,4 @@ public class WebSocketChatController {
     }
 
 }
+

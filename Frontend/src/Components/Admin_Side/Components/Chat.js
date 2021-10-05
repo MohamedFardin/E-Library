@@ -115,9 +115,11 @@ export default function Chat() {
   function connect() {
     console.log("Inside Connected")
       var socket = new SockJS('http://localhost:8081/websocketApp');
+      console.log("Socket Initialized")
       stompClient = Stomp.over(socket);
-  
+      console.log("Stomp Initialized")
       stompClient.connect({}, connectionSuccess);
+      console.log("Stomp connexted")
     //event.preventDefault();
   }
   

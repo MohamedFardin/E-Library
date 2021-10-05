@@ -18,6 +18,7 @@ const initialValues = {
   publishDate: new Date(),
   edition: '',
   totalNumber: "",
+  category: "",
   description: "",
   coverpic: "",
   coverpic1: "",
@@ -50,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function UpdateModalRedundant(props) {
+  console.log(props.load)
   const classes = useStyles();
   const {values,setValues,handleInputChange} = useForm(props.load);
   const {open, setOpen} = props;

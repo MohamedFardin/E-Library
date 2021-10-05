@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Logo from '../Logo.png';
 import { books_full_list } from '../Book_List';
 import auth from '../../auth';
-
+import TemporaryDrawer from '../../Admin_Side/Components/Sidebar';
 
 function SideBar(ref) {  
 
@@ -18,10 +18,16 @@ function SideBar(ref) {
 
   // Hamburger
   const [isActive, setActive] = useState("false");
+  const [openSidebar,setOpenSidebar] = useState(false);
 
   const hamburgerToggle = () => {
     setActive(!isActive);
   };
+
+  //Chat
+  const activateChat = () =>{
+    setOpenSidebar(true);
+  }
 
   // Genre Toggle
   const [isGenreActive, setGenreActive] = useState("false");
@@ -180,7 +186,7 @@ function SideBar(ref) {
             <li>
               <a>
                 {/* <i className='bx bx-cog' ></i> */}
-                <i className='bx bx-support'></i>
+                <i className='bx bx-support' onClick={activateChat}></i>
                 <span className="link_name">Support</span>
               </a>
               <ul className="sub-menu blank">
@@ -211,7 +217,11 @@ function SideBar(ref) {
           </ul>
         </div>
         
-
+          
+        <TemporaryDrawer 
+      state= {openSidebar}
+      setState={setOpenSidebar}
+      />
 
       </div>
     )

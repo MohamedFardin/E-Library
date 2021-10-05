@@ -61,6 +61,7 @@ public class AdminController {
 
     @PutMapping("/update-book/{bookId}")
     public String update(@PathVariable("bookId") long bookId, @RequestBody Book book,Pictures pictures){
+        if (book.getCoverpic() == null) book.setCoverpic("");
         pictures = pictureCoverter(book);
         bookService.update(bookId,book);
         pictureService.update(bookId,pictures);
