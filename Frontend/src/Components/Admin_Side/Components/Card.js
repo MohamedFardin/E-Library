@@ -12,6 +12,7 @@ import UpdateModal from './Modals/UpdateModal';
 import DeleteModal from './Modals/DeleteModal';
 import { Rowing } from '@material-ui/icons';
 import TemporaryDrawer from './Sidebar';
+import { useHistory } from 'react-router';
 
 const useStyles = makeStyles({
   root: {
@@ -35,6 +36,12 @@ export default function SimpleCard(props) {
   const [openDelete,setOpenDelete] = useState(false);
   const [openUpdate,setOpenUpdate] = useState(false);
   const [openSidebar,setOpenSidebar] = useState(false);
+  
+  let history = useHistory();
+
+  function handleClick() {
+    history.push("/approve");
+  }
 
   function click(){
     console.log(props.title);
@@ -42,6 +49,7 @@ export default function SimpleCard(props) {
     if(props.title === "Delete Books") setOpenDelete(true);
     if(props.title === "Update Database") setOpenUpdate(true);
     if(props.title === "Messages") setOpenSidebar(true);
+    if(props.title === "Verify User") handleClick();
   }
   return (
     <div style={{display: "inline-block"}}>
