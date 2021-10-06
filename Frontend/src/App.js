@@ -68,6 +68,7 @@ function App() {
         <Route exact path="/membership" component={MembershipView} />
         <Route exact path="/confirm-account" component={ConfirmAccountView} />
         <Route exact path="/approve" component={ApproveView} />
+        <Route exact path="/view_profile" component={UserContainer} />
         {/* <Route exact path="/" component={LoginFormContainer} /> */}
         <Route exact path="/users/:id" component={UserContainer} />
         <Route exact path="/adminsignup" component={AdminSignupContainer} />

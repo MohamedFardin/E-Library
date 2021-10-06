@@ -204,7 +204,7 @@ function SideBar(ref) {
                   />
                 </div>
                 <div className="name-membership">
-                  <Link to="/login">
+                  <Link to="/view_profile">
                     <div className="profile_name">Hello Guest - Sign In</div>
                   </Link>
                   <Link to="/membership">
