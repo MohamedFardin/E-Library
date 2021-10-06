@@ -123,7 +123,7 @@ export default function UpdateModalRedundant(props) {
         console.log(error);
       })
     }
-    
+    setOpen(false);
   }
 
   
@@ -143,7 +143,7 @@ export default function UpdateModalRedundant(props) {
       >
         <Fade in={open}>
           <Paper className={classes.pageContent}>
-              <Form onSubmit={handleSubmit} >
+              <Form >
                 <Grid container >
                   <Grid item xs={6} >
                     <Controls.Input
@@ -331,7 +331,7 @@ export default function UpdateModalRedundant(props) {
                     <div>
                       <Controls.Button
                         varient="contained"
-                        type = "submit"
+                        onClick = {handleSubmit}
                         text="Submit"
                       />
                       <Controls.Button

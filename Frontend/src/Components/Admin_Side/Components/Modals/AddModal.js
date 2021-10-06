@@ -138,7 +138,7 @@ export default function AddModal(props) {
         console.log(error);
       })
     }
-    
+    setOpen(false)
   }
 
   
@@ -158,7 +158,7 @@ export default function AddModal(props) {
       >
         <Fade in={open}>
           <Paper className={classes.pageContent}>
-              <Form onSubmit={handleSubmit} >
+              <Form  >
                 <Grid container >
                   <Grid item xs={6} >
                     <Controls.Input
@@ -347,7 +347,7 @@ export default function AddModal(props) {
                     <div>
                       <Controls.Button
                         varient="contained"
-                        type = "submit"
+                        onClick= {handleSubmit}
                         text="Submit"
                       />
                       <Controls.Button
