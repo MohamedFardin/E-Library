@@ -25,10 +25,10 @@ class NavBarContainer extends Component {
   render() {
     return (
       <div>
-        {/* <NavBarView
+        <NavBarView
         user={this.props.user}
-        /> */}
-        {auth.set_User(this.props.user)}
+        />
+        {/* {auth.set_User(this.props.user)} */}
       </div>
     )
   }

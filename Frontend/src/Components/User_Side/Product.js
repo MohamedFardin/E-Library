@@ -4,7 +4,8 @@ import './Product.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import ProductDescription from './ProductDescription';
 
-function Product({id, title, author, description, cover_images, images, rating}) {
+function Product({id, title, author, description, cover_images, images}) {
+    // , rating
 
     return (
         // The product card
@@ -13,14 +14,15 @@ function Product({id, title, author, description, cover_images, images, rating})
                 <h2>{title}</h2>
                 <p className="product__author">
                     <small>~</small>
+                    {console.log(author)}
                     <strong>{author}</strong>
                 </p>
-                <div className="product__rating">
+                {/* <div className="product__rating">
                     {Array(rating).fill().map(() => (
                             <p>⭐</p>
                         )
                     )}
-                </div>
+                </div> */}
             </div>
 
             <img src={cover_images[0]}/>
@@ -35,7 +37,7 @@ function Product({id, title, author, description, cover_images, images, rating})
                         "cover_images": {cover_images},
                         "src": {images},
                         "description": {description},
-                        "rating": {rating}
+                        // "rating": {rating}
                         }
                     ],
                     index: 0

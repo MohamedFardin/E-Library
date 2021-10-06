@@ -13,18 +13,18 @@ function SideBar(ref) {
   // console.log(genreOnClick);
 
   // console.log(ref);
-  const user = auth.tell_User();
-  console.log(user.username);
+  // const user = auth.tell_User();
+  // console.log(user.username);
 
   // Hamburger
   const [isActive, setActive] = useState("false");
-  const [openSidebar,setOpenSidebar] = useState(false);
-
+  
   const hamburgerToggle = () => {
     setActive(!isActive);
   };
-
+  
   //Chat
+  const [openSidebar,setOpenSidebar] = useState(false);
   const activateChat = () =>{
     setOpenSidebar(true);
   }

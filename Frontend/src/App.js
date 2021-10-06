@@ -41,7 +41,7 @@ function App() {
     // BEM
     <Router>
       <div className="App">
-        <NavBarContainer />
+        {/* <NavBarContainer /> */}
       <FloatingButton />
         
         <Switch>
@@ -80,6 +80,10 @@ function App() {
           {/* Admin */}
           <Route path="/admin">
             <Admin />
+          </Route>
+
+          <Route path="/home">
+            <Home/>
           </Route>
 
           <Route path="/">

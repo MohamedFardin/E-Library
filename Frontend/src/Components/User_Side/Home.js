@@ -8,26 +8,69 @@ import FloatingButton from './FloatingButton';
 import BookService from '../Admin_Side/Services/BookService';
 import Testimonial from './Testimonial';
 import { books_full_list } from './Book_List';
+import { UserContainer } from '../Authentication Part/components/containers';
+import BOOKSLIST from '../Books_Data.json';
 
-function Home(testimonialref) {
+function Home() {
+
+    // console.log(UserContainer.);
+
     // Getting books
-    // const books_list = books_full_list.books_list;
-    const books = books_full_list.books_list;
-
-    console.log(books.books);
-
     const [Allbooks, setBooks] = useState([]);
 
     useEffect(() => {
         getBooks()
     }, [])
+
     const getBooks = () =>{
         BookService.getUrl().then((response)=>{
-            setBooks(response.data)
-            // console.log(response.data)
-            // console.log(Allbooks);
+            console.log(response.data);
+            setBooks(response.data);
         })
     }
+
+    // const books_list = books_full_list.books_list;
+    const genre_list = [];
+    // const books = books_full_list.books_list;
+    const books = [];
+    // const obj = JSON.parse(books);
+    // console.log(obj);
+    const books_genre = [];
+
+    BOOKSLIST.map((genre_) => {
+        if(!(genre_list.includes(genre_.category))){
+            genre_list.push(genre_.category);
+            // console.log(genre_.category);
+        }
+    })
+
+    genre_list.map((genre_)=> {
+        if(!(books_genre.includes(genre_))){
+            books_genre.push(genre_.category);
+            const temp_books = BOOKSLIST.filter((book) =>
+            {
+                if(book.category.includes(genre_))
+                    return book
+                    // return genre_.category
+            })
+            // obj["characters"].push({ name: "Ken Rosenberg", location: "Vice City" });
+            // console.log(temp_books);
+            // books.assign(temp_books);
+            // obj[genre_].push
+            // console.log(books);
+            const push_this = [];
+            push_this.push(genre_);
+            push_this.push(temp_books);
+            // console.log(push_this);
+            // books[genre_] = temp_books;
+            books.push(push_this);
+        }
+    })
+    
+
+    console.log(books);
+
+    // console.log(Allbooks);
 
     // Genre
     const Genre = useRef(null);
@@ -83,38 +126,73 @@ function Home(testimonialref) {
                     <button onClick={alert(`Clicked`)}>Click here!!!</button>
                 </div> */}
 
+                {/* {console.log(books)} */}
+
                 <div ref={Genre}>
                     {
-                    // books.books.map((row) => (
-                    books.map((row) => (
+                    books.map((BOOK, pos) => (
                         <div>
                             <div className="home__genre">
                                 <h3
                                     className="home__genre__text"
-                                >{row[0]}...</h3>
+                                >{BOOK[0]}...</h3>
                             </div>
                             <div
-                                id={row[0].toLowerCase()}
                                 className="home__row"
                             >
                                 {
-                                row[1].map((card) => (
-                                    <Product
-                                    id={card.id}
-                                    title={card.title}
-                                    author={card.author}
-                                    description={card.description}
-                                    cover_images={card.cover_images}
-                                    images={card.images}
-                                    rating={card.rating}
-                                    />
-                                ))
+                                    BOOK[1].map((card, pos2) => (
+                                        <Product
+                                        id={card.id}
+                                        title={card.title}
+                                        author={card.author}
+                                        description={card.description}
+                                        cover_images={[card.coverpic, card.coverpic1, card.coverpic2]}
+                                        images={[card.image1, card.image2]}
+                                        // rating={card.rating}
+                                        />
+                                    ))
                                 }
                             </div>
                         </div>
                     ))
                     }
                 </div>
+                {/* {console.log(books)}
+                {/* <div ref={Genre}>
+                    {
+                    // books.books.map((row) => (
+                    BOOKSLIST
+                    .map((row) => (
+                        <div>
+                            <div className="home__genre">
+                                <h3
+                                    className="home__genre__text"
+                                >{row.category}...</h3>
+                            </div>
+                        </div>
+                    ))
+                    }
+                    <div
+                        // id={row[0].toLowerCase()}
+                        className="home__row"
+                    >
+                        {
+                        BOOKSLIST
+                        .map((card) => (
+                            <Product
+                            id={card.id}
+                            title={card.title}
+                            author={card.author}
+                            description={card.description}
+                            cover_images={[card.coverpic, card.coverpic1, card.coverpic2]}
+                            images={[card.image1, card.image2]}
+                            // rating={3}
+                            />
+                        ))
+                        }
+                    </div>
+                </div> */}
 
                 <div ref={testimonial}>
                     <Testimonial/>

@@ -19,7 +19,7 @@ function ProductDescription() {
     const images_3d = product.cover_images.cover_images;
     const show_images = product.src.images;
     // const rating = 5;
-    const rating = product.rating.rating;
+    // const rating = product.rating.rating;
     // const title = "The Book";
     const author = product.author.author;
     const title = product.title.title;
@@ -116,7 +116,7 @@ function ProductDescription() {
                   <small>~</small>
                   {author}
                 </h2>
-                <div className = "product_description__details__product-rating">
+                {/* <div className = "product_description__details__product-rating">
                   <span>Rating : </span>
                   <div className = "product_description__details__product-rating_stars">
                       {Array(rating).fill().map(() => (
@@ -124,7 +124,7 @@ function ProductDescription() {
                           )
                       )}
                   </div>
-                </div>
+                </div> */}
 
                 <div className = "product_description__details__product-detail">
                   <h2>about this item: </h2>
